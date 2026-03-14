@@ -43,7 +43,6 @@ ICON_THEME = 'cola.icontheme'
 INOTIFY = 'cola.inotify'
 INOTIFY_DELAY = 'cola.inotifydelay'
 NOTIFY_ON_PUSH = 'cola.notifyonpush'
-REMEMBER_PUSH_TRACKING_CHECKBOX = 'cola.rememberpushtrackingcheckbox'
 LINEBREAK = 'cola.linebreak'
 LOAD_COMMITMSG_COUNT = 'cola.loadcommitmsgcount'
 LOGDATE = 'cola.logdate'
@@ -165,7 +164,6 @@ class Defaults:
     inotify_delay = 888
     load_commitmsg_count = 10
     notifyonpush = False
-    remember_push_tracking_checkbox = False
     linebreak = True
     maxrecent = 8
     mergetool = difftool
@@ -360,12 +358,6 @@ def notify_on_push(context) -> bool:
     """Return whether to notify upon push or not"""
     default = Defaults.notifyonpush
     return context.cfg.get(NOTIFY_ON_PUSH, default=default)
-
-
-def remember_push_tracking_checkbox(context) -> bool:
-    """Return whether to remember the Push dialog tracking checkbox state"""
-    default = Defaults.remember_push_tracking_checkbox
-    return context.cfg.get(REMEMBER_PUSH_TRACKING_CHECKBOX, default=default)
 
 
 def linebreak(context) -> bool:
